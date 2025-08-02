@@ -28,6 +28,7 @@ class SplashViewModel @Inject constructor(
             delay(1500) // simulate loading or animation
             val isLoggedIn = userPrefs.isUserLoggedIn() // implement this method
             _startDestination.value = if (isLoggedIn) Screen.ExpenseDashboard else Screen.Onboarding
+         //   _startDestination.value = if (isLoggedIn) Screen.ExpenseDashboard else Screen.ExpenseDashboard
         }
     }
 }

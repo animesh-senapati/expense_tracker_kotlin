@@ -25,6 +25,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.example.dailyexpensetracker.presentation.navigation.Screen
 import com.google.accompanist.pager.*
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalPagerApi::class)
@@ -35,6 +36,15 @@ fun OnboardingScreen(
 ) {
     val pages = viewModel.pages
     val pagerState = rememberPagerState()
+
+    // 🟣 Auto-slide logic
+    LaunchedEffect(Unit) {
+        while (true) {
+            delay(2000L) // wait 2 seconds
+            val nextPage = (pagerState.currentPage + 1) % pages.size
+            pagerState.animateScrollToPage(nextPage)
+        }
+    }
 
     Box(
         modifier = Modifier

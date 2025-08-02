@@ -18,6 +18,7 @@ import com.example.dailyexpensetracker.presentation.splash.SplashScreen
 import com.example.dailyexpensetracker.presentation.splash.SplashViewModel
 import com.example.dailyexpensetracker.ui.theme.DailyExpenseTrackerTheme
 import dagger.hilt.android.AndroidEntryPoint
+
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
